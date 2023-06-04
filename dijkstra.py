@@ -5,12 +5,12 @@ from timeit import default_timer as timer
 try:
     CSVData = open("graph.csv")
     res = np.genfromtxt(CSVData, delimiter=" ", dtype='int')
-    n,m = res[0][0], res[0][1]
-    ress = np.delete(res, 0, 0)
-    for i in ress:
+    for i in res:
         for j in i:
             if (int(j) < 0):
                 raise ValueError
+    n,m = res[0][0], res[0][1]
+    ress = np.delete(res, 0, 0)
 except ValueError:
     print("Wrong data")
     quit()
