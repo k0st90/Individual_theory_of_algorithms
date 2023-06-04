@@ -4,10 +4,11 @@ import numbers
 def input_validation(array_of_cities_values):
     for i in array_of_cities_values:
         if isinstance(i, numbers.Number) == False or i < 0:
+            print('Wrong number')
             raise ValueError
         else:
             return array_of_cities_values
-			
+	
 def radix_sort(source):
 	RADIX = 10
 	buckets = [[] for i in range(RADIX)]  
